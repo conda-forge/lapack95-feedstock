@@ -1,4 +1,5 @@
 cp $RECIPE_DIR/make.inc .
+cp $RECIPE_DIR/makefile ./SRC/.
  
 cd SRC/
 make single_double_complex_dcomplex
