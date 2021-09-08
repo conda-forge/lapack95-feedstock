@@ -10,9 +10,9 @@ mkdir -p $PREFIX/include
 mkdir -p $PREFIX/lib
 
 if [[ "$target_platform" == linux-* ]]; then
-  $FC  -shared -o liblapack95.so -Wl,--whole-archive lapack95.a -Wl,--no-whole-archive $PREFIX/lib/liblapack.so $PREFIX/lib/libblas.so
+  $FC  -shared -o liblapack95.so $LDFLAGS -Wl,--whole-archive lapack95.a -Wl,--no-whole-archive $PREFIX/lib/liblapack.so $PREFIX/lib/libblas.so
 elif [[ "$target_platform" == osx-* ]]; then
-  $FC -shared -o liblapack95.dylib -Wl,-undefined -Wl,dynamic_lookup -Wl,-all_load lapack95.a -Wl,-noall_load $PREFIX/lib/liblapack.dylib $PREFIX/lib/libblas.dylib
+  $FC -shared -o liblapack95.dylib $LDFLAGS -Wl,-undefined -Wl,dynamic_lookup -Wl,-all_load lapack95.a -Wl,-noall_load $PREFIX/lib/liblapack.dylib $PREFIX/lib/libblas.dylib
 fi
 
 cp liblapack95$SHLIB_EXT $PREFIX/lib/liblapack95$SHLIB_EXT
