@@ -15,6 +15,7 @@ elif [[ "$target_platform" == osx-* ]]; then
   $FC -shared -o liblapack95.dylib $LDFLAGS -Wl,-undefined -Wl,dynamic_lookup -Wl,-all_load lapack95.a -Wl,-noall_load $PREFIX/lib/liblapack.dylib $PREFIX/lib/libblas.dylib
 fi
 
+cp lapack95.a $PREFIX/lib/.
 cp liblapack95$SHLIB_EXT $PREFIX/lib/liblapack95$SHLIB_EXT
 cp lapack95_modules/*.mod $PREFIX/include/
 cd $PREFIX/include/
