@@ -10,7 +10,7 @@ source:
   sha256: 55711e5b1c5ddc9c7dd1d3ea15c37fc5b400783ac6ea573a75e2b1358c2c479b
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win]
 
 requirements:
@@ -28,11 +28,11 @@ test:
 
 about:
   home: http://www.netlib.org/lapack95
-  license: BSD-3-Clause 
+  license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: LAPACK95 is a Fortran95 interface to LAPACK. 
+  summary: LAPACK95 is a Fortran95 interface to LAPACK.
 
 extra:
   recipe-maintainers:
-    - hhslepicka 
+    - hhslepicka
