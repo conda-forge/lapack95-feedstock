@@ -18,10 +18,11 @@ fi
 cp lapack95.a $PREFIX/lib/.
 cp liblapack95$SHLIB_EXT $PREFIX/lib/liblapack95$SHLIB_EXT
 cp lapack95_modules/*.mod $PREFIX/include/
-cd $PREFIX/include/
-ln -s f95_lapack.mod lapack95.mod
 
 if "$NM" -u liblapack95$SHLIB_EXT | grep _clagge_; then
   echo "_clagge_ found :("
   exit 1
 fi
+
+cd $PREFIX/include/
+ln -s f95_lapack.mod lapack95.mod
