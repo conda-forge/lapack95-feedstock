@@ -19,8 +19,12 @@ requirements:
     - {{ stdlib("c") }}
     - make
   host:
-    - libblas
+    - libblas                # [linux]
+    - libblas * *openblas    # [osx]
     - liblapack
+  run:
+    - libblas * *openblas    # [osx]
+    - openblas               # [osx]
 
 test:
   commands:
