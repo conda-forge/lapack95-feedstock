@@ -20,8 +20,9 @@ requirements:
     - make
   host:
     - libblas                # [linux]
+    - liblapack              # [linux]
     - libblas * *openblas    # [osx]
-    - liblapack
+    - liblapack * *openblas  # [osx]
   run:
     - libblas * *openblas    # [osx]
     - openblas               # [osx]
